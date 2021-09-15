@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.ExamFragment">
+
+    <com.shuhart.stepview.StepView
+        android:id="@+id/step_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:sv_animationType="None"
+        app:sv_stepPadding="12dp"
+        app:sv_selectedCircleColor="@color/black"
+        app:sv_selectedStepNumberColor="@color/white"
+        app:sv_selectedTextColor="@color/black"
+        app:sv_doneCircleColor="@color/red"
+        app:sv_doneStepLineColor="@color/red"
+        app:sv_doneTextColor="@color/white"
+        app:sv_doneStepMarkColor="@color/white"
+        app:sv_typeface="@font/bellerose"/>
+
+    <com.amier.modernloginregister.Common.NonSwipeViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="261dp"
+        android:layout_above="@+id/layout_button"
+        android:layout_below="@+id/step_view"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white">
+    </com.amier.modernloginregister.Common.NonSwipeViewPager>
+
+    <LinearLayout
+        android:id="@+id/layout_button"
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_previous_step"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_skip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/grey"
+            android:enabled="false"
+            android:fontFamily="@font/bellerose"
+            android:onClick="previousStep"
+            android:text="Previous"
+            android:textColor="@android:color/white"></Button>
+
+        <Button
+            android:id="@+id/btn_next_step"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_skip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/grey"
+            android:enabled="false"
+            android:fontFamily="@font/bellerose"
+            android:onClick="nextClick"
+            android:text="Next"
+            android:textColor="@color/white"></Button>
+
+    </LinearLayout>
+
+</RelativeLayout>
